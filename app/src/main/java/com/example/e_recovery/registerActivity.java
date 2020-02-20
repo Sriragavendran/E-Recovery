@@ -24,9 +24,9 @@ public class registerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        b2 = (Button) findViewById(R.id.registerButton);
+        b1 = (Button) findViewById(R.id.loginButton);
         register();
-        b1 = (Button) findViewById(R.id.register);
-        b2 = (Button) findViewById(R.id.register);
         firebaseAuth = FirebaseAuth.getInstance();
         b1.setOnClickListener(new View.OnClickListener() {
                                   public void onClick(View v) {
@@ -56,7 +56,7 @@ public class registerActivity extends AppCompatActivity {
         );
     }
 
-    public void register() {
+    private void register() {
         patientid = (EditText) findViewById(R.id.patientid);
         patientName = (EditText) findViewById(R.id.patientName);
         hospitalCode = (EditText) findViewById(R.id.hcode);
@@ -64,7 +64,7 @@ public class registerActivity extends AppCompatActivity {
         repassword = (EditText) findViewById(R.id.repass);
     }
 
-    public Boolean validate() {
+    private Boolean validate() {
         Boolean result = false;
         String Name = patientName.getText().toString().trim();
         String id = patientid.getText().toString().trim();
