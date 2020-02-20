@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "932525471076",
+    "firebase_url": "https://erecover-b064f.firebaseio.com",
+    "project_id": "erecover-b064f",
+    "storage_bucket": "erecover-b064f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932525471076:android:08f25d0a57097d2e96f671",
+        "android_client_info": {
+          "package_name": "com.example.e_recovery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932525471076-6i575go5huraovic73vieu2m7tbshbov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6U8JcF1WiQ8L9sXP4hmTvxXM5RtPMqZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932525471076-6i575go5huraovic73vieu2m7tbshbov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
