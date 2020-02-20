@@ -9,29 +9,28 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class f2 extends AppCompatActivity {
-   private Button login,register;
+    private Button login, register;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_f2);
-        login=(Button) findViewById(R.id.login);
-        register=(Button) findViewById(R.id.register);
+        login = (Button) findViewById(R.id.login);
+        register = (Button) findViewById(R.id.register);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(f2.this,fuctionActivity.class));
+                startActivity(new Intent(f2.this, fuctionActivity.class));
             }
         });
-        register=(Button) findViewById(R.id.register);
+        register = (Button) findViewById(R.id.register);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
                     startActivity(new Intent(f2.this, registerActivity.class));
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(f2.this,"Registration failed",Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(f2.this, "Registration failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
