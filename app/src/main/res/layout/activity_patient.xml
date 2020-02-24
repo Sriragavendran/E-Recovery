@@ -7,8 +7,8 @@
     android:background="@color/colorPrimary"
     tools:context=".patientActivity">
 
-    <TextView
-        android:id="@+id/textView5"
+    <EditText
+        android:id="@+id/name"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="88dp"
@@ -18,8 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <EditText
+        android:id="@+id/problem"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
@@ -27,10 +27,10 @@
         android:background="@color/cardview_light_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAVE"
@@ -38,6 +38,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/problem"
         app:layout_constraintVertical_bias="0.158" />
 </androidx.constraintlayout.widget.ConstraintLayout>

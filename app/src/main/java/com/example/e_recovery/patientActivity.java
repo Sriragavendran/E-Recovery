@@ -21,7 +21,7 @@ public class patientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient);
         patientName = (EditText) findViewById(R.id.name);
-        problem = (EditText) findViewById(R.id.vehicleNumber);
+        problem = (EditText) findViewById(R.id.problem);
         save = (Button) findViewById(R.id.save);
 
         save.setOnClickListener(new View.OnClickListener() {

@@ -52,7 +52,7 @@ public class fuctionActivity extends AppCompatActivity {
 
     private void validate(String id, String password) {
         boolean result = false;
-        firebaseAuth.createUserWithEmailAndPassword(id, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        firebaseAuth.signInWithEmailAndPassword(id, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
