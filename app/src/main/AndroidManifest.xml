@@ -28,7 +28,7 @@
         <activity android:name=".patientActivity" />
         <activity android:name=".operationActivity" />
         <activity android:name=".registerActivity" />
-        <activity android:name=".fuctionActivity" />
+        <activity android:name=".FunctionActivity" />
 
     </application>
 

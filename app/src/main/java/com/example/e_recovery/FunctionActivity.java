@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class fuctionActivity extends AppCompatActivity {
+public class FunctionActivity extends AppCompatActivity {
     private Button b1, b2;
     private EditText id, password;
     private FirebaseAuth firebaseAuth;
@@ -33,7 +33,7 @@ public class fuctionActivity extends AppCompatActivity {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user != null) {
             finish();
-            startActivity(new Intent(fuctionActivity.this, operationActivity.class));
+            startActivity(new Intent(FunctionActivity.this, operationActivity.class));
         }
         b1.setOnClickListener(new View.OnClickListener() {
                                   public void onClick(View v) {
@@ -44,7 +44,7 @@ public class fuctionActivity extends AppCompatActivity {
         );
         b2.setOnClickListener(new View.OnClickListener() {
                                   public void onClick(View v) {
-                                      startActivity(new Intent(fuctionActivity.this, registerActivity.class));
+                                      startActivity(new Intent(FunctionActivity.this, registerActivity.class));
                                   }
                               }
         );
@@ -56,9 +56,9 @@ public class fuctionActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    startActivity(new Intent(fuctionActivity.this, operationActivity.class));
+                    startActivity(new Intent(FunctionActivity.this, operationActivity.class));
                 } else {
-                    Toast.makeText(fuctionActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FunctionActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });

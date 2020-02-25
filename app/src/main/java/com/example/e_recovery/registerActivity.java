@@ -30,7 +30,7 @@ public class registerActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         b1.setOnClickListener(new View.OnClickListener() {
                                   public void onClick(View v) {
-                                      startActivity(new Intent(registerActivity.this, fuctionActivity.class));
+                                      startActivity(new Intent(registerActivity.this, FunctionActivity.class));
                                   }
                               }
         );
@@ -44,7 +44,7 @@ public class registerActivity extends AppCompatActivity {
                                               public void onComplete(@NonNull Task<AuthResult> task) {
                                                   if (task.isSuccessful()) {
                                                       Toast.makeText(registerActivity.this, "Registration is Successful", Toast.LENGTH_SHORT).show();
-                                                      startActivity(new Intent(registerActivity.this, fuctionActivity.class));
+                                                      startActivity(new Intent(registerActivity.this, FunctionActivity.class));
                                                   } else {
                                                       Toast.makeText(registerActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
                                                   }

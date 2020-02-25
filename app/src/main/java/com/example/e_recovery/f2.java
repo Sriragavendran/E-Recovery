@@ -20,7 +20,7 @@ public class f2 extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(f2.this, fuctionActivity.class));
+                startActivity(new Intent(f2.this, FunctionActivity.class));
             }
         });
         register = (Button) findViewById(R.id.register);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/colorPrimary"
     android:layout_height="match_parent"
-    tools:context=".fuctionActivity">
+    tools:context=".FunctionActivity">
 
     <EditText
         android:id="@+id/emailcheck"
