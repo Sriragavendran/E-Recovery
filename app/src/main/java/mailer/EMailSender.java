@@ -13,7 +13,6 @@ import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.mail.Authenticator;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -22,9 +21,9 @@ import javax.mail.internet.MimeMessage;
 
 public class EMailSender extends Authenticator {
     private static final String mailBody = "Patient is in emergency in this route way, please do following actions";
-    private static final String sender = "erecoveryapplication05@gmail.com";
+    private static final String sender = "erecoveryapplication05@gmail.com\n";
     private static final String subject = "Emergency";
-    private static final String recipients = "ssrivishnu21@gmail.com";
+    private static final String recipients = "ssrivishnu21@gmail.com,sriragavendran.n@gmail.com";
 
     static {
         Security.addProvider(new JSSEProvider());
@@ -53,7 +52,7 @@ public class EMailSender extends Authenticator {
         session = Session.getDefaultInstance(props, this);
     }
 
-    public synchronized void sendEmergencyMail() throws MessagingException {
+    public synchronized void sendEmergencyMail() throws Exception {
         try {
             MimeMessage message = new MimeMessage(session);
             DataHandler handler = new DataHandler(new ByteArrayDataSource(mailBody.getBytes(), "text/plain"));
@@ -63,9 +62,8 @@ public class EMailSender extends Authenticator {
             if (recipients.indexOf(',') > 0)
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
             else
-                message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
-            Transport.send(message);
-        } catch (MessagingException e) {
+                message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));            Transport.send(message);
+        } catch (Exception e) {
             Log.d("mylog", "Error in sending: " + e.toString());
         }
 

@@ -63,5 +63,6 @@ public class operationActivity extends AppCompatActivity {
 
             }
         });
+        sender.start();
     }
 }
