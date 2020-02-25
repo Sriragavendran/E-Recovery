@@ -21,14 +21,15 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class EMailSender extends Authenticator {
+    private static final String mailBody = "Patient is in emergency in this route way, please do following actions";
+    private static final String sender = "erecoveryapplication05@gmail.com";
+    private static final String subject = "Emergency";
+    private static final String recipients = "ssrivishnu21@gmail.com";
+
     static {
         Security.addProvider(new JSSEProvider());
     }
 
-    private final String mailBody = "Patient is in emergency in this route way, please do following actions";
-    private final String sender = "erecoveryapplication05@gmail.com";
-    private final String subject = "Emergency";
-    private final String recipients = "ssrivishnu21@gmail.com,sriragavendran.n@gmail.com";
     private String mailhost = "smtp.gmail.com";
     private String user;
     private String password;

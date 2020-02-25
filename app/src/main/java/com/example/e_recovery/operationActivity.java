@@ -1,15 +1,19 @@
 package com.example.e_recovery;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import mailer.EMailSender;
+
 public class operationActivity extends AppCompatActivity {
+    private static final String mailId = "erecoveryapplication05@gmail.com";
+    private static final String password = "recover@123";
     private Button vehicle, patientData, emergency;
 
     @Override
@@ -41,21 +45,23 @@ public class operationActivity extends AppCompatActivity {
     }
 
     private void sendEmail() {
-        String[] To = {"ssrivishnu80@gmail.com"};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        final ProgressDialog dialog = new ProgressDialog(operationActivity.this);
+        dialog.setTitle("Sending Email");
+        dialog.setMessage("Please wait");
+        dialog.show();
+        Thread sender = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    EMailSender eMailSender = new EMailSender(mailId, password);
+                    eMailSender.sendEmergencyMail();
+                    dialog.dismiss();
+                    Log.e("mylog", "mail sent");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-        emailIntent.setType("text/plain");
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, To);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Emergency");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
-
-
-        try {
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-            finish();
-            Log.i("Finished sending email", "");
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(operationActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
-        }
+            }
+        });
     }
 }
